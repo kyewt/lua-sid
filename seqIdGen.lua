@@ -57,7 +57,7 @@ local NEW = function(ID_LENGTH, CHAR_SET)
         return FIND(CHAR_SET, prevId[digit])
     end
 
-    local newId = function()
+    local NEW_ID = function()
         local ID = prevId
         local INC_DIGIT INC_DIGIT = function(digit)
             charIndex = GET_CHAR_INDEX(digit) + 1
@@ -83,7 +83,7 @@ local NEW = function(ID_LENGTH, CHAR_SET)
 
     local proxy = {}
     local proxyMT = {
-        __call = newId,
+        __call = NEW_ID,
         __tostring = TOSTRING,
         __newindex = NEWINDEX,
         __index = INDEX,
